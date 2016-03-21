@@ -1,23 +1,20 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class GetAverage {
+    public static double getAverage(double a, double b, double c) {
+        double avg = (a + b + c) / 3.0;
+        return avg;
+    }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner scan = new Scanner(System.in);
+        double firstNum = scanner.nextDouble();
+        double secondNum = scanner.nextDouble();
+        double thirdNum = scanner.nextDouble();
 
-        double[] arr = new double[3];
+        double average = getAverage(firstNum, secondNum, thirdNum);
 
-        for (int i = 0; i < 3; i++) {
-            double input = scan.nextDouble();
-            arr[i] = input;
-        }
-
-        double sum = arr[0] + arr[1] + arr[2];
-        double average = sum / 3;
-
-        DecimalFormat formatter = new DecimalFormat("#0.00");
-        System.out.println(formatter.format(average));
+        System.out.printf("%.2f", average);
     }
 }
